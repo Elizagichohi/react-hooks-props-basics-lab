@@ -1,34 +1,15 @@
 import React from "react";
-import Navbar from "./NavBar";
-import Home from "./Home";
-import About from "./About";
+import Links from "./Links";
 
-
-const user = {
-  name: "Liza",
-  city: "New York",
-  bio: "I made this!",
-  color: "firebrick",
-  github: "https://github.com/liza",
-  linkedin: "https://www.linkedin.com/in/liza/"
-};
-
-function App() {
+function About({ bio, github, linkedin }) {
   return (
-    <div>
-      <Navbar />
-      <Home 
-        name={user.name}
-        city={user.city}
-        color={user.color}
-      />
-      <About 
-        bio={user.bio}
-        github={user.github}
-        linkedin={user.linkedin}
-      />
+    <div id="about">
+      <h2>About Me</h2>
+      {bio && bio.length > 0 && <p>{bio}</p>}
+      <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
+      <Links github={github} linkedin={linkedin} />
     </div>
   );
 }
 
-export default App;
+export default About;
